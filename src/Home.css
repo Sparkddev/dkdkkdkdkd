@@ -2,14 +2,21 @@ body {
    
     max-height: 100vh;
     width: 100%;
-    background-color:#cad2d9;
+    background-color:black;
 }
 
 .whitediv{
-    min-height: 270px;
-    background-color: #404040;
+    height: 380px;
+    background-color: white;
     border-radius: 6px;
+    padding: 0px;
+    
 
+}
+
+.imagediv{
+    background-color: lightgrey;
+    margin: 0px;
 }
 
 .spacer{
@@ -17,7 +24,7 @@ body {
 }
 
 .logoimage{
-    width: 20%;
+    width: 80%;
 }
 
 .label{
@@ -48,8 +55,53 @@ body {
     transform: scale(2); 
 }
 
+.input-group-text{
+    height: 40px;
+    margin-top: 2px;
+    
+
+}
+.form-control{
+    height: 40px;
+}
+
+input::placeholder {
+    font-size:13px;
+   margin-left: 20px;
+}
+
+.icons{
+    color:rgb(195, 195, 195);
+   
+}
+
+.forgot{
+color: rgba(0,0,0,0.87);
+font-size: 13px;
+text-decoration: none;
+}
+
+.forgot:hover{
+    color: rgba(0,0,0,0.87);
+    font-size: 13px;
+    text-decoration: none;  
+}
+
 .checkspan{
     font-size:14px;
+}
+
+.mybutton{
+    background-color: rgb(33, 150, 243);
+    height: 80px;
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+    font-weight: 500;
+}
+.mybutton:hover{
+    color: white;
+    font-weight: 500;
 }
 
 .info{
