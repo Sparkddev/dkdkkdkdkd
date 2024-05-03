@@ -20,6 +20,12 @@ body {
     height: 5vh;
 }
 
+.mylogo{
+    width: 30%;
+}
+
+
+
 .toggle-container {
     display: inline-block;
 }
