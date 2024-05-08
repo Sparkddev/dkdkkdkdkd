@@ -2,9 +2,22 @@ body {
    
     max-height: 100vh;
     width: 100%;
-    background-color:#39207c;
+    background:url('https://res.cloudinary.com/edifice-solutions/image/upload/v1715167802/Screenshot_2024-05-08_at_12.27.38_ghcusm.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
+
+.items{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.myimage{
+    width: 200px;
+    
+}
 .whitediv{
     min-height: 380px;
     background-color: white;

