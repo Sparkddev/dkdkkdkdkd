@@ -2,11 +2,14 @@ body {
    
     max-height: 100vh;
     width: 100%;
-    background-color:#4d4d4d;
+    /* background-color:#4d4d4d; */
+    background: url('https://res.cloudinary.com/edifice-solutions/image/upload/v1715782559/background-of-the-day_zohjxr.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .whitediv{
-    height: 380px;
+    min-height: 380px;
     background-color: white;
 }
 

